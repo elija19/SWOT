@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1">
+	<title>Bienvenido - Otherthings</title>
+	<script type="text/javascript"  src="js/jquery.js"></script> <!-- Inicializador de libreria jquery -->
+	<link rel="stylesheet" href="css/estilos.css"> <!-- Inicializador de estilos -->
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/fuentes.css">
+
+	<script>
+			var updateClock = function(date) {
+				date = date || new Date();
+				var clock = document.querySelector('#clock');
+				var second = clock.querySelector('.second .hand');
+				var hour = clock.querySelector('.hour .hand');
+				var minute = clock.querySelector('.minute .hand');
+			  
+				second.style.transform = 'rotate(' + (date.getSeconds() * 6) +'deg)';
+				hour.style.transform = 'rotate(' + ((date.getHours() * 30) + (date.getMinutes()/2)) +'deg)';
+				minute.style.transform = 'rotate(' + (date.getMinutes() * 6) +'deg)';
+				
+			}
+			window.onload = function() {
+				updateClock();
+				setInterval(updateClock, 1000);
+			};
+		</script>
+</head>
+
+<body>
+
+	<div id="particles-js"></div>
+<div class="container">
+
+	
+
+	<div class="letras-slider">
+			<h1  class="animated bounceIn">Otherthings...</h1>  
+	</div>
+
+	
+	<div id="clock">
+			<div class="overlay"></div>
+			<div class="background"></div>
+			<div class="axis"></div>
+			<div class="second"><div class="hand"></div></div>
+			<div class="hour"><div class="hand"></div></div>
+			<div class="minute"><div class="hand"></div></div>
+	</div>
+	
+
+	<div class="boton">
+			<a href="pagina.html" style="text-decoration: none;" ><h2> Ir al sitio :D </h2></a>
+	</div>
+
+</div>
+
+
+
+<script src="js/particles.js"></script> <!-- estas referencias siempre deben ir al final del body-->
+<script src="js/app.js"></script><!-- Referencia al archivo js app -->
+
+
+</body>
+
+	
+
+	</html>
